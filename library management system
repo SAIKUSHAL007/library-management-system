@@ -28,3 +28,8 @@ CREATE TABLE Loans (
     FOREIGN KEY (MemberID) REFERENCES Members(MemberID),
     FOREIGN KEY (BookID) REFERENCES Books(BookID)
 );
+--sample query
+SELECT B.Title, L.LoanDate, L.ReturnDate
+FROM Loans L
+JOIN Books B ON L.BookID = B.BookID
+WHERE L.MemberID = 1;
